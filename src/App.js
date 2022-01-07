@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Greetings from './components/Greetings'
+import Form from './components/Form'
+import Tasks from './components/Tasks'
+import MusicPlayer from './components/MusicPlayer'
+import Modal from './components/Modal'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-black w-full lg:h-screen relative" style={{ backgroundColor: '#222831' }}>
+      {/* How to use Music Player */}
+      <Modal />
+      {/* Greetings Message */}
+      <div>
+        <Greetings user="Carlos" />
+      </div>
+      {/* Form and Tasks */}
+      <div className="flex py-8 flex-col items-center lg:flex-row">
+        <Form />
+        <Tasks />
+      </div>
+      {/* Music Player */}
+      <div className='bg-red-500 relative'>
+        <MusicPlayer />
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
